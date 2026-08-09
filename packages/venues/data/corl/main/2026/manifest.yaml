@@ -1,0 +1,110 @@
+id: "corl/main/2026/v1"
+conferenceId: "corl"
+track: "main"
+year: 2026
+version: 1
+status: "rubric_only"
+
+scoreScale:
+  min: 1
+  max: 10
+  step: 1
+  labels:
+    1: "Trivial or fundamentally flawed"
+    2: "Strong reject"
+    3: "Clear reject"
+    4: "Reject - does not meet acceptance bar"
+    5: "Borderline reject"
+    6: "Borderline accept"
+    7: "Accept - solid contribution"
+    8: "Clear accept"
+    9: "Strong accept"
+    10: "Top paper, outstanding contribution"
+
+reviewSections:
+  - id: "summary"
+    title: "Summary"
+    required: true
+    description: "Summarize the paper including the problem, approach, and main results at the intersection of robotics and learning."
+    maxLength: 3000
+
+  - id: "strengths"
+    title: "Strengths"
+    required: true
+    description: "Describe the strengths. Consider novelty of the learning approach, quality of robot experiments, reproducibility, and significance for robot learning."
+    maxLength: 5000
+
+  - id: "weaknesses"
+    title: "Weaknesses"
+    required: true
+    description: "Describe the weaknesses. Consider sim-to-real gaps, limited hardware validation, narrow task scope, or insufficient baselines."
+    maxLength: 5000
+
+  - id: "questions"
+    title: "Questions for Authors"
+    required: true
+    description: "Questions about the approach, experimental setup, sim-to-real transfer, and generalization capabilities."
+    maxLength: 3000
+
+  - id: "robot_experiments"
+    title: "Robot Experiments Assessment"
+    required: true
+    description: "Assess the quality of robot experiments. Are results shown on real hardware? Is the sim-to-real transfer convincing? Are multiple trials reported with variance?"
+    maxLength: 2000
+
+  - id: "learning_contribution"
+    title: "Learning Contribution"
+    required: true
+    description: "Assess the machine learning contribution. Is the learning method novel or is it a straightforward application? Does it advance the state of robot learning?"
+    maxLength: 2000
+
+  - id: "generalization"
+    title: "Generalization and Robustness"
+    required: true
+    description: "Does the method generalize to new environments, objects, or tasks? Is it robust to perturbations?"
+    maxLength: 2000
+
+  - id: "reproducibility"
+    title: "Reproducibility"
+    required: true
+    description: "Can the results be reproduced? Is code provided? Are sufficient details given about the hardware setup and training procedure?"
+    maxLength: 2000
+
+  - id: "confidence"
+    title: "Confidence"
+    required: true
+    description: "Rate your confidence from 1 (low) to 5 (expert in robot learning)."
+
+precheckRules:
+  - id: "page_limit"
+    type: "hard_stop"
+    condition: "Paper body exceeds 8 pages (excluding references and appendix)"
+    message: "CoRL papers are limited to 8 pages for the main body, with additional pages for references and appendix."
+
+  - id: "anonymization"
+    type: "hard_stop"
+    condition: "Paper is not properly anonymized for double-blind review"
+    message: "CoRL uses double-blind review. Papers must be anonymized."
+
+  - id: "formatting"
+    type: "needs_confirmation"
+    condition: "Paper does not use the official CoRL LaTeX template"
+    message: "Papers must use the official CoRL 2026 template."
+
+  - id: "real_robot_results"
+    type: "needs_confirmation"
+    condition: "Paper presents only simulation results without real robot experiments or strong justification"
+    message: "CoRL strongly values real robot experiments. Simulation-only papers need compelling justification."
+
+  - id: "dual_submission"
+    type: "hard_stop"
+    condition: "Paper is under review or accepted at another venue"
+    message: "CoRL does not accept papers under review or accepted elsewhere."
+
+calibration:
+  status: "rubric_only"
+
+source:
+  url: "https://corl2026.org/call-for-papers/"
+  accessDate: "2026-01-15"
+  maintainerNote: "Based on CoRL 2024/2025 review criteria. Emphasizes real robot experiments and learning contributions. Uses 1-10 scale similar to ML conferences."

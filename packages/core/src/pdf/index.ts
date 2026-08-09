@@ -1,0 +1,15 @@
+export { PdfProcessor, PdfProcessingError } from './processor.js';
+export type { ProcessorDeps } from './processor.js';
+export { ArtifactBuilder } from './artifacts.js';
+export { extractText } from './text-extractor.js';
+export type { PageText, TextItem } from './text-extractor.js';
+export { renderPages, renderPageRange } from './page-renderer.js';
+export { ocrPage, ocrPages, compareWithTextLayer } from './ocr.js';
+export type { OcrResult } from './ocr.js';
+export { parseSections, identifyAbstract, identifyReferencesStart } from './section-parser.js';
+export type { SectionEntry } from './section-parser.js';
+export { parseReferences } from './reference-parser.js';
+export type { ExtractedReference } from './reference-parser.js';
+export { extractFigures } from './figure-extractor.js';
+export type { FigureInfo, FigureCaption, FigureReference } from './figure-extractor.js';
+export type { PaperArtifact, PageArtifact, ChunkArtifact, FigureRef, ParsedReference, SectionIndex } from './types.js';

@@ -1,0 +1,100 @@
+id: "iros/main/2026/v1"
+conferenceId: "iros"
+track: "main"
+year: 2026
+version: 1
+status: "rubric_only"
+
+scoreScale:
+  min: 1
+  max: 6
+  step: 1
+  labels:
+    1: "Strong reject - no merit for publication"
+    2: "Reject - significant flaws"
+    3: "Borderline reject - below the acceptance bar"
+    4: "Borderline accept - marginally above the bar"
+    5: "Accept - solid contribution"
+    6: "Strong accept - excellent work"
+
+reviewSections:
+  - id: "summary"
+    title: "Summary"
+    required: true
+    description: "Briefly summarize the paper, its contributions, and the robotic system or method proposed."
+    maxLength: 3000
+
+  - id: "strengths"
+    title: "Strengths"
+    required: true
+    description: "Describe the strengths. Consider novelty, technical quality, experimental validation (especially on real hardware), and clarity."
+    maxLength: 5000
+
+  - id: "weaknesses"
+    title: "Weaknesses"
+    required: true
+    description: "Describe the weaknesses. Consider lack of real-world experiments, limited baselines, scalability, or insufficient analysis."
+    maxLength: 5000
+
+  - id: "questions"
+    title: "Questions for Authors"
+    required: true
+    description: "Questions that could influence your assessment, especially regarding experimental methodology and real-world applicability."
+    maxLength: 3000
+
+  - id: "hardware_experiments"
+    title: "Hardware/Real-World Validation"
+    required: true
+    description: "Assess the quality of hardware experiments or real-world validation. Does the paper demonstrate the approach on real robots? Are the experiments convincing?"
+    maxLength: 2000
+
+  - id: "practical_applicability"
+    title: "Practical Applicability"
+    required: true
+    description: "Assess the practical applicability of the proposed method. Can it be deployed on real robotic systems? What are the practical limitations?"
+    maxLength: 2000
+
+  - id: "novelty"
+    title: "Novelty Assessment"
+    required: true
+    description: "Rate the novelty relative to existing robotics literature."
+    maxLength: 2000
+
+  - id: "confidence"
+    title: "Confidence"
+    required: true
+    description: "Rate your confidence from 1 (low) to 5 (expert in this specific robotics sub-area)."
+
+precheckRules:
+  - id: "page_limit"
+    type: "hard_stop"
+    condition: "Paper exceeds 8 pages including references"
+    message: "IROS papers are limited to 8 pages total including references (IEEE format)."
+
+  - id: "formatting"
+    type: "needs_confirmation"
+    condition: "Paper does not use the IEEE two-column conference format"
+    message: "IROS requires IEEE two-column conference format."
+
+  - id: "video_attachment"
+    type: "needs_confirmation"
+    condition: "Paper describes a robotic system without video supplementary material"
+    message: "IROS strongly encourages video attachments demonstrating the system in operation."
+
+  - id: "dual_submission"
+    type: "hard_stop"
+    condition: "Paper is under review or accepted at another venue"
+    message: "IROS does not accept papers under review elsewhere."
+
+  - id: "simulation_only"
+    type: "needs_confirmation"
+    condition: "Paper presents only simulation results without justification for lack of hardware experiments"
+    message: "IROS values real-world experiments. Simulation-only papers should clearly justify why hardware validation was not feasible."
+
+calibration:
+  status: "rubric_only"
+
+source:
+  url: "https://iros2026.org/call-for-papers"
+  accessDate: "2026-01-15"
+  maintainerNote: "Based on IROS 2024/2025 review criteria. IEEE format, 8 pages total. Strong emphasis on real-world validation."

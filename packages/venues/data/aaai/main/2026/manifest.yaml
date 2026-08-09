@@ -1,0 +1,93 @@
+id: "aaai/main/2026/v1"
+conferenceId: "aaai"
+track: "main"
+year: 2026
+version: 1
+status: "rubric_only"
+
+scoreScale:
+  min: 1
+  max: 10
+  step: 1
+  labels:
+    1: "Definite reject"
+    2: "Strong reject"
+    3: "Clear reject"
+    4: "Reject"
+    5: "Borderline reject"
+    6: "Borderline accept"
+    7: "Accept"
+    8: "Strong accept"
+    9: "Very strong accept"
+    10: "Award-quality paper"
+
+reviewSections:
+  - id: "summary"
+    title: "Summary"
+    required: true
+    description: "Briefly summarize the paper, including the problem addressed, approach, and main results."
+    maxLength: 3000
+
+  - id: "strengths"
+    title: "Strengths"
+    required: true
+    description: "List the strengths of the paper in terms of novelty, technical quality, experimental evaluation, and presentation."
+    maxLength: 5000
+
+  - id: "weaknesses"
+    title: "Weaknesses"
+    required: true
+    description: "List the weaknesses of the paper. Be specific, constructive, and actionable."
+    maxLength: 5000
+
+  - id: "questions"
+    title: "Questions for Authors"
+    required: true
+    description: "Questions for the authors to address in the author response period."
+    maxLength: 3000
+
+  - id: "ethical_considerations"
+    title: "Ethical Considerations"
+    required: false
+    description: "Flag any ethical concerns with the paper including dual use, fairness, privacy, or potential harm."
+    maxLength: 2000
+
+  - id: "overall_assessment"
+    title: "Overall Assessment"
+    required: true
+    description: "Provide a brief overall assessment justifying your score."
+    maxLength: 3000
+
+  - id: "confidence"
+    title: "Confidence"
+    required: true
+    description: "Rate your confidence in the review from 1 (low) to 5 (expert)."
+
+precheckRules:
+  - id: "page_limit"
+    type: "hard_stop"
+    condition: "Paper body exceeds 7 pages (excluding references and appendix)"
+    message: "AAAI main track papers must be at most 7 pages plus up to 2 additional pages for references. Appendices are submitted separately as supplementary material."
+
+  - id: "anonymization"
+    type: "hard_stop"
+    condition: "Paper is not properly anonymized for double-blind review"
+    message: "AAAI uses double-blind review. The paper must not reveal author identities."
+
+  - id: "formatting"
+    type: "needs_confirmation"
+    condition: "Paper does not use the official AAAI LaTeX template or two-column format"
+    message: "Papers must use the official AAAI 2026 author kit with two-column format."
+
+  - id: "dual_submission"
+    type: "hard_stop"
+    condition: "Paper appears to be a dual submission or previously published"
+    message: "AAAI does not allow dual submissions. Papers must be original and not previously published."
+
+calibration:
+  status: "rubric_only"
+
+source:
+  url: "https://aaai.org/conference/aaai/aaai-26/aaai-26-call-for-papers/"
+  accessDate: "2026-01-15"
+  maintainerNote: "Based on AAAI 2025/2026 submission guidelines. 7+2 page format."

@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "lib": ["ES2022"],
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "outDir": "dist",
+    "paths": {
+      "@opr/core": ["./packages/core/src"],
+      "@opr/providers": ["./packages/providers/src"],
+      "@opr/prompts": ["./packages/prompts/src"],
+      "@opr/venues": ["./packages/venues/src"],
+      "@opr/db": ["./packages/db/src"]
+    }
+  },
+  "exclude": ["node_modules", "dist"]
+}

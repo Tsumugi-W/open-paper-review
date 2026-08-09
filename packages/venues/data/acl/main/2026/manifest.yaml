@@ -1,0 +1,107 @@
+id: "acl/main/2026/v1"
+conferenceId: "acl"
+track: "main"
+year: 2026
+version: 1
+status: "rubric_only"
+
+scoreScale:
+  min: 1
+  max: 5
+  step: 0.5
+  labels:
+    1: "Poor - trivial, wrong, or already known"
+    1.5: "Below average"
+    2: "Mediocre - significant technical flaws or limited novelty"
+    2.5: "Borderline"
+    3: "Borderline - could be acceptable with revisions"
+    3.5: "Above average"
+    4: "Good - solid work with minor limitations"
+    4.5: "Very good"
+    5: "Excellent - groundbreaking, top-tier contribution"
+
+reviewSections:
+  - id: "summary"
+    title: "Paper Summary"
+    required: true
+    description: "Summarize the main claims and contributions of the paper."
+    maxLength: 3000
+
+  - id: "strengths"
+    title: "Strengths"
+    required: true
+    description: "What are the strengths of this paper? Consider significance, novelty, clarity, soundness, and thoroughness of experiments."
+    maxLength: 5000
+
+  - id: "weaknesses"
+    title: "Weaknesses"
+    required: true
+    description: "What are the weaknesses of this paper? Be specific and constructive."
+    maxLength: 5000
+
+  - id: "questions"
+    title: "Questions and Suggestions"
+    required: true
+    description: "Questions for the authors and specific suggestions for improvement."
+    maxLength: 3000
+
+  - id: "limitations"
+    title: "Limitations"
+    required: true
+    description: "Have the authors adequately discussed the limitations of their work?"
+    maxLength: 2000
+
+  - id: "ethical_concerns"
+    title: "Ethical Concerns"
+    required: false
+    description: "Flag any ethical issues including data collection practices, potential for misuse, or bias."
+    maxLength: 2000
+
+  - id: "reproducibility"
+    title: "Reproducibility"
+    required: true
+    description: "Can the results be reproduced from the paper and supplementary materials? Consider code, data, and experimental details."
+
+  - id: "soundness"
+    title: "Soundness"
+    required: true
+    description: "Rate the soundness (correctness of claims, methodology) from 1 to 5."
+
+  - id: "confidence"
+    title: "Confidence"
+    required: true
+    description: "Rate your confidence in this review from 1 (not confident) to 5 (expert)."
+
+precheckRules:
+  - id: "page_limit"
+    type: "hard_stop"
+    condition: "Long paper body exceeds 8 pages or short paper body exceeds 4 pages (excluding references and appendix)"
+    message: "ACL long papers: 8 pages max; short papers: 4 pages max. Unlimited additional pages for references and appendices."
+
+  - id: "anonymization"
+    type: "hard_stop"
+    condition: "Paper is not properly anonymized for double-blind review"
+    message: "ACL uses double-blind review. The paper must not reveal author identities."
+
+  - id: "formatting"
+    type: "needs_confirmation"
+    condition: "Paper does not use the official ACL LaTeX template"
+    message: "Papers must follow ACL 2026 formatting guidelines."
+
+  - id: "responsible_nlp"
+    type: "needs_confirmation"
+    condition: "Paper does not include a responsible NLP research checklist"
+    message: "ACL requires authors to fill out the Responsible NLP Research checklist."
+
+  - id: "dual_submission"
+    type: "hard_stop"
+    condition: "Paper appears to be submitted to another *ACL venue simultaneously"
+    message: "ACL does not allow dual submissions to other ACL-affiliated venues."
+
+calibration:
+  status: "rubric_only"
+
+source:
+  url: "https://2026.aclweb.org/calls/main_conference_papers/"
+  accessDate: "2026-01-15"
+  maintainerNote: "Based on ACL 2024/2025 review guidelines. ACL uses 1-5 scale with half-point increments since ARR transition."

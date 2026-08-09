@@ -1,0 +1,108 @@
+{
+  "common": {
+    "appName": "OpenPaperReview",
+    "loading": "加载中...",
+    "error": "发生错误",
+    "save": "保存",
+    "cancel": "取消",
+    "delete": "删除",
+    "edit": "编辑",
+    "back": "返回",
+    "viewAll": "查看全部",
+    "noResults": "未找到结果"
+  },
+  "nav": {
+    "dashboard": "仪表盘",
+    "papers": "论文",
+    "reviews": "审稿",
+    "admin": "管理"
+  },
+  "auth": {
+    "signIn": "登录",
+    "signOut": "退出",
+    "email": "邮箱",
+    "password": "密码",
+    "forgotPassword": "忘记密码？",
+    "createAccount": "创建账户"
+  },
+  "dashboard": {
+    "title": "仪表盘",
+    "totalPapers": "论文总数",
+    "activeReviews": "进行中的审稿",
+    "completedReviews": "已完成的审稿",
+    "recentPapers": "最近的论文",
+    "recentReviews": "最近的审稿",
+    "noPapers": "暂无论文。",
+    "noReviews": "暂无审稿。",
+    "uploadFirst": "上传您的第一篇论文",
+    "startReview": "开始审稿"
+  },
+  "papers": {
+    "title": "论文",
+    "upload": "上传论文",
+    "uploadPdf": "上传 PDF",
+    "importArxiv": "从 arXiv 导入",
+    "dragDrop": "将 PDF 拖放到此处，或点击浏览",
+    "maxSize": "最大 50MiB，100 页",
+    "arxivId": "arXiv ID",
+    "arxivPlaceholder": "例如 2301.07041",
+    "importing": "导入中...",
+    "uploading": "上传中...",
+    "noPapers": "暂无上传的论文。",
+    "detail": {
+      "abstract": "摘要",
+      "metadata": "元数据",
+      "authors": "作者",
+      "pages": "页数",
+      "source": "来源",
+      "uploaded": "上传时间",
+      "startReview": "开始审稿",
+      "pagesPreview": "页面预览"
+    }
+  },
+  "reviews": {
+    "title": "审稿",
+    "new": "新建审稿",
+    "selectPaper": "选择论文",
+    "selectVenue": "选择会议",
+    "language": "审稿语言",
+    "start": "开始审稿",
+    "cancel": "取消",
+    "viewReport": "查看报告",
+    "progress": "进度",
+    "live": "实时",
+    "connecting": "连接中...",
+    "log": "日志",
+    "noReviews": "暂无审稿。",
+    "startFirst": "开始您的第一次审稿",
+    "status": {
+      "pending": "等待中",
+      "running": "进行中",
+      "completed": "已完成",
+      "failed": "失败",
+      "cancelled": "已取消"
+    }
+  },
+  "report": {
+    "title": "审稿报告",
+    "overallScore": "总分",
+    "confidence": "置信度",
+    "summary": "摘要",
+    "strengths": "优点",
+    "weaknesses": "缺点",
+    "questions": "给作者的问题",
+    "suggestions": "建议",
+    "exportMarkdown": "导出 Markdown",
+    "exportPdf": "导出 PDF"
+  },
+  "admin": {
+    "title": "管理",
+    "members": "团队成员",
+    "models": "模型配置",
+    "venues": "会议配置",
+    "usage": "总使用量",
+    "inviteMember": "邀请成员",
+    "addModel": "添加模型",
+    "addVenue": "添加会议"
+  }
+}

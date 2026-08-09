@@ -1,0 +1,94 @@
+id: "cvpr/main/2026/v1"
+conferenceId: "cvpr"
+track: "main"
+year: 2026
+version: 1
+status: "rubric_only"
+
+scoreScale:
+  min: 1
+  max: 6
+  step: 1
+  labels:
+    1: "Strong reject - trivially wrong or irrelevant"
+    2: "Reject - significant issues in technical quality or novelty"
+    3: "Borderline reject - has merits but weaknesses outweigh"
+    4: "Borderline accept - acceptable with minor concerns"
+    5: "Accept - solid contribution to the field"
+    6: "Strong accept - excellent, award-quality work"
+
+reviewSections:
+  - id: "summary"
+    title: "Summary"
+    required: true
+    description: "Briefly summarize the paper including the problem, approach, and main findings."
+    maxLength: 3000
+
+  - id: "strengths"
+    title: "Strengths"
+    required: true
+    description: "Describe the strengths of the paper. Consider novelty, technical quality, experimental thoroughness, and clarity."
+    maxLength: 5000
+
+  - id: "weaknesses"
+    title: "Weaknesses"
+    required: true
+    description: "Describe the weaknesses. Be specific and suggest how they might be addressed."
+    maxLength: 5000
+
+  - id: "questions"
+    title: "Questions for Rebuttal"
+    required: true
+    description: "Questions for the authors to address during rebuttal. Focus on points that could change your assessment."
+    maxLength: 3000
+
+  - id: "limitations"
+    title: "Limitations and Societal Impact"
+    required: true
+    description: "Have the authors adequately discussed limitations and potential negative societal impact of their work?"
+    maxLength: 2000
+
+  - id: "rating_justification"
+    title: "Rating Justification"
+    required: true
+    description: "A brief justification for your overall rating that ties together the strengths and weaknesses."
+    maxLength: 3000
+
+  - id: "confidence"
+    title: "Confidence"
+    required: true
+    description: "Rate your confidence from 1 (low) to 5 (expert)."
+
+precheckRules:
+  - id: "page_limit"
+    type: "hard_stop"
+    condition: "Paper body exceeds 8 pages (excluding references)"
+    message: "CVPR main track papers are limited to 8 pages excluding references."
+
+  - id: "anonymization"
+    type: "hard_stop"
+    condition: "Paper is not properly anonymized for double-blind review"
+    message: "CVPR uses double-blind review. The paper must not contain author identities."
+
+  - id: "formatting"
+    type: "needs_confirmation"
+    condition: "Paper does not use the official CVPR two-column format"
+    message: "Papers must use the official CVPR 2026 author kit."
+
+  - id: "supplementary_size"
+    type: "needs_confirmation"
+    condition: "Supplementary material exceeds 100MB"
+    message: "CVPR supplementary materials should be reasonable in size."
+
+  - id: "dual_submission"
+    type: "hard_stop"
+    condition: "Paper appears to be under review elsewhere or previously published"
+    message: "CVPR prohibits dual submissions and previously published work."
+
+calibration:
+  status: "rubric_only"
+
+source:
+  url: "https://cvpr.thecvf.com/Conferences/2026/AuthorGuidelines"
+  accessDate: "2026-01-15"
+  maintainerNote: "Based on CVPR 2024/2025 review guidelines. CVPR uses 1-6 scale."

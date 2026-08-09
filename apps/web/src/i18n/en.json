@@ -1,0 +1,108 @@
+{
+  "common": {
+    "appName": "OpenPaperReview",
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "back": "Back",
+    "viewAll": "View all",
+    "noResults": "No results found"
+  },
+  "nav": {
+    "dashboard": "Dashboard",
+    "papers": "Papers",
+    "reviews": "Reviews",
+    "admin": "Admin"
+  },
+  "auth": {
+    "signIn": "Sign In",
+    "signOut": "Sign Out",
+    "email": "Email",
+    "password": "Password",
+    "forgotPassword": "Forgot password?",
+    "createAccount": "Create Account"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "totalPapers": "Total Papers",
+    "activeReviews": "Active Reviews",
+    "completedReviews": "Completed Reviews",
+    "recentPapers": "Recent Papers",
+    "recentReviews": "Recent Reviews",
+    "noPapers": "No papers yet.",
+    "noReviews": "No reviews yet.",
+    "uploadFirst": "Upload your first paper",
+    "startReview": "Start a review"
+  },
+  "papers": {
+    "title": "Papers",
+    "upload": "Upload Paper",
+    "uploadPdf": "Upload PDF",
+    "importArxiv": "Import from arXiv",
+    "dragDrop": "Drag and drop a PDF here, or click to browse",
+    "maxSize": "Max 50MiB, 100 pages",
+    "arxivId": "arXiv ID",
+    "arxivPlaceholder": "e.g. 2301.07041",
+    "importing": "Importing...",
+    "uploading": "Uploading...",
+    "noPapers": "No papers uploaded yet.",
+    "detail": {
+      "abstract": "Abstract",
+      "metadata": "Metadata",
+      "authors": "Authors",
+      "pages": "Pages",
+      "source": "Source",
+      "uploaded": "Uploaded",
+      "startReview": "Start Review",
+      "pagesPreview": "Pages Preview"
+    }
+  },
+  "reviews": {
+    "title": "Reviews",
+    "new": "New Review",
+    "selectPaper": "Select Paper",
+    "selectVenue": "Select Venue",
+    "language": "Review Language",
+    "start": "Start Review",
+    "cancel": "Cancel",
+    "viewReport": "View Report",
+    "progress": "Progress",
+    "live": "Live",
+    "connecting": "Connecting...",
+    "log": "Log",
+    "noReviews": "No reviews yet.",
+    "startFirst": "Start your first review",
+    "status": {
+      "pending": "Pending",
+      "running": "Running",
+      "completed": "Completed",
+      "failed": "Failed",
+      "cancelled": "Cancelled"
+    }
+  },
+  "report": {
+    "title": "Review Report",
+    "overallScore": "Overall Score",
+    "confidence": "Confidence",
+    "summary": "Summary",
+    "strengths": "Strengths",
+    "weaknesses": "Weaknesses",
+    "questions": "Questions for Authors",
+    "suggestions": "Suggestions",
+    "exportMarkdown": "Export Markdown",
+    "exportPdf": "Export PDF"
+  },
+  "admin": {
+    "title": "Admin",
+    "members": "Team Members",
+    "models": "Model Profiles",
+    "venues": "Venue Bundles",
+    "usage": "Total Usage",
+    "inviteMember": "Invite Member",
+    "addModel": "Add Model",
+    "addVenue": "Add Venue"
+  }
+}

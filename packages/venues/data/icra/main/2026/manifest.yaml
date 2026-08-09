@@ -1,0 +1,100 @@
+id: "icra/main/2026/v1"
+conferenceId: "icra"
+track: "main"
+year: 2026
+version: 1
+status: "rubric_only"
+
+scoreScale:
+  min: 1
+  max: 6
+  step: 1
+  labels:
+    1: "Strong reject - fundamental flaws"
+    2: "Reject - below acceptance threshold"
+    3: "Borderline reject - some merit but insufficient"
+    4: "Borderline accept - acceptable contribution"
+    5: "Accept - good contribution to robotics"
+    6: "Strong accept - excellent, top-tier contribution"
+
+reviewSections:
+  - id: "summary"
+    title: "Summary"
+    required: true
+    description: "Summarize the paper including the robotic problem addressed, the proposed approach, and main results."
+    maxLength: 3000
+
+  - id: "strengths"
+    title: "Strengths"
+    required: true
+    description: "Describe the strengths. Consider technical novelty, quality of real-robot experiments, system integration, and relevance to the robotics community."
+    maxLength: 5000
+
+  - id: "weaknesses"
+    title: "Weaknesses"
+    required: true
+    description: "Describe the weaknesses. Consider lack of hardware validation, limited comparisons, scalability, robustness, or insufficient real-world testing."
+    maxLength: 5000
+
+  - id: "questions"
+    title: "Questions for Authors"
+    required: true
+    description: "Questions regarding experimental setup, real-world applicability, robustness, and deployment considerations."
+    maxLength: 3000
+
+  - id: "experimental_validation"
+    title: "Experimental Validation"
+    required: true
+    description: "Assess the experimental validation. Are results demonstrated on real hardware? Is the evaluation thorough and fair? Are failure cases discussed?"
+    maxLength: 2000
+
+  - id: "real_world_applicability"
+    title: "Real-World Applicability"
+    required: true
+    description: "Assess practical deployment potential. Does the method work outside lab conditions? What about robustness, safety, and computational requirements?"
+    maxLength: 2000
+
+  - id: "technical_quality"
+    title: "Technical Quality"
+    required: true
+    description: "Assess the technical quality of the approach. Is the method well-motivated? Are claims supported by evidence?"
+    maxLength: 2000
+
+  - id: "confidence"
+    title: "Confidence"
+    required: true
+    description: "Rate your confidence from 1 (low) to 5 (expert in this robotics sub-field)."
+
+precheckRules:
+  - id: "page_limit"
+    type: "hard_stop"
+    condition: "Paper exceeds 8 pages including references"
+    message: "ICRA papers are limited to 8 pages total including references (IEEE format)."
+
+  - id: "formatting"
+    type: "needs_confirmation"
+    condition: "Paper does not use the IEEE two-column conference format (IEEE RAS template)"
+    message: "ICRA requires IEEE Robotics and Automation Society conference format."
+
+  - id: "video_attachment"
+    type: "needs_confirmation"
+    condition: "Paper proposes a robotic system or control method without video demonstration"
+    message: "ICRA strongly encourages video supplements showing the robot in action."
+
+  - id: "dual_submission"
+    type: "hard_stop"
+    condition: "Paper is under review or accepted at another venue"
+    message: "ICRA does not accept papers under review or accepted elsewhere."
+
+  - id: "safety_discussion"
+    type: "needs_confirmation"
+    condition: "Paper involves human-robot interaction or autonomous navigation without safety discussion"
+    message: "Papers involving HRI or autonomous systems should discuss safety considerations."
+
+calibration:
+  status: "rubric_only"
+
+source:
+  url: "https://2026.ieee-icra.org/call-for-papers/"
+  accessDate: "2026-01-15"
+  maintainerNote: "Based on ICRA 2024/2025 review criteria. IEEE format, 8 pages total. Strong emphasis on real-robot experiments and system validation."

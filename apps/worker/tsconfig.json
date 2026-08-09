@@ -1,0 +1,18 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "target": "ES2022",
+    "outDir": "dist",
+    "noEmit": false,
+    "paths": {
+      "@opr/core": ["../../packages/core/src"],
+      "@opr/core/workflow": ["../../packages/core/src/workflow"],
+      "@opr/providers": ["../../packages/providers/src"],
+      "@opr/prompts": ["../../packages/prompts/src"],
+      "@opr/venues": ["../../packages/venues/src"],
+      "@opr/db": ["../../packages/db/src"]
+    }
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules", "dist"]
+}

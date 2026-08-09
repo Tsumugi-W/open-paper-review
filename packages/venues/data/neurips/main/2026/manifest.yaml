@@ -1,0 +1,113 @@
+id: "neurips/main/2026/v1"
+conferenceId: "neurips"
+track: "main"
+year: 2026
+version: 1
+status: "rubric_only"
+
+scoreScale:
+  min: 1
+  max: 10
+  step: 1
+  labels:
+    1: "Trivial or wrong"
+    2: "Strong reject"
+    3: "Clear reject"
+    4: "Reject"
+    5: "Marginally below acceptance threshold"
+    6: "Marginally above acceptance threshold"
+    7: "Accept"
+    8: "Clear accept"
+    9: "Strong accept"
+    10: "Top 5% of accepted papers"
+
+reviewSections:
+  - id: "summary"
+    title: "Summary"
+    required: true
+    description: "Briefly summarize the paper and its contributions."
+    maxLength: 3000
+
+  - id: "strengths"
+    title: "Strengths"
+    required: true
+    description: "List the strengths of the paper. Consider originality, quality, clarity, and significance."
+    maxLength: 5000
+
+  - id: "weaknesses"
+    title: "Weaknesses"
+    required: true
+    description: "List the weaknesses of the paper. Be constructive and specific."
+    maxLength: 5000
+
+  - id: "questions"
+    title: "Questions"
+    required: true
+    description: "Questions for the authors. These should be questions that could influence your overall score."
+    maxLength: 3000
+
+  - id: "limitations"
+    title: "Limitations"
+    required: true
+    description: "Have the authors adequately discussed the limitations of their work? Have they addressed potential negative societal impacts?"
+    maxLength: 2000
+
+  - id: "ethical_concerns"
+    title: "Ethical Concerns"
+    required: false
+    description: "Flag any ethical issues with this paper including potential for harm, dual use, or inadequate treatment of human subjects."
+    maxLength: 2000
+
+  - id: "soundness"
+    title: "Soundness"
+    required: true
+    description: "Rate the technical correctness of claims and methodology from 1 (poor) to 4 (excellent)."
+
+  - id: "presentation"
+    title: "Presentation"
+    required: true
+    description: "Rate how well the paper is written and organized from 1 (poor) to 4 (excellent)."
+
+  - id: "contribution"
+    title: "Contribution"
+    required: true
+    description: "Rate the significance and novelty of the contribution from 1 (poor) to 4 (excellent)."
+
+  - id: "confidence"
+    title: "Confidence"
+    required: true
+    description: "Your confidence in the assessment from 1 (low, educated guess) to 5 (absolutely certain, expert in this area)."
+
+precheckRules:
+  - id: "page_limit"
+    type: "hard_stop"
+    condition: "Paper body exceeds 9 pages (excluding references and supplementary)"
+    message: "NeurIPS main track papers must be at most 9 pages for the main body, with unlimited additional pages for references. Supplementary materials submitted separately."
+
+  - id: "anonymization"
+    type: "hard_stop"
+    condition: "Paper is not properly anonymized for double-blind review"
+    message: "NeurIPS uses double-blind review. The paper must not reveal author identities."
+
+  - id: "formatting"
+    type: "needs_confirmation"
+    condition: "Paper does not use the official NeurIPS LaTeX template"
+    message: "Papers should use the official NeurIPS 2026 LaTeX style file."
+
+  - id: "checklist"
+    type: "needs_confirmation"
+    condition: "Paper does not include the NeurIPS paper checklist"
+    message: "NeurIPS requires a completed paper checklist covering reproducibility, broader impacts, and limitations."
+
+  - id: "dual_submission"
+    type: "hard_stop"
+    condition: "Paper appears to be a dual submission or previously published"
+    message: "NeurIPS does not accept dual submissions or previously published work."
+
+calibration:
+  status: "rubric_only"
+
+source:
+  url: "https://neurips.cc/Conferences/2026/CallForPapers"
+  accessDate: "2026-01-15"
+  maintainerNote: "Based on NeurIPS 2024/2025 review guidelines. Score scale 1-10 consistent since 2021."

@@ -1,0 +1,35 @@
+FROM node:22-alpine AS base
+RUN corepack enable && corepack prepare pnpm@9.15.0 --activate
+WORKDIR /app
+
+FROM base AS deps
+COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
+COPY apps/worker/package.json apps/worker/
+COPY packages/core/package.json packages/core/
+COPY packages/providers/package.json packages/providers/
+COPY packages/prompts/package.json packages/prompts/
+COPY packages/venues/package.json packages/venues/
+COPY packages/db/package.json packages/db/
+RUN pnpm install --frozen-lockfile
+
+FROM base AS builder
+COPY --from=deps /app/node_modules ./node_modules
+COPY . .
+RUN pnpm --filter @opr/core build && \
+    pnpm --filter @opr/providers build && \
+    pnpm --filter @opr/prompts build && \
+    pnpm --filter @opr/venues build && \
+    pnpm --filter @opr/db build && \
+    pnpm --filter @opr/worker build
+
+FROM base AS runner
+ENV NODE_ENV=production
+COPY --from=builder /app/apps/worker/dist ./dist
+COPY --from=builder /app/node_modules ./node_modules
+COPY --from=builder /app/packages/core/dist ./packages/core/dist
+COPY --from=builder /app/packages/providers/dist ./packages/providers/dist
+COPY --from=builder /app/packages/prompts/dist ./packages/prompts/dist
+COPY --from=builder /app/packages/venues/dist ./packages/venues/dist
+COPY --from=builder /app/packages/db/dist ./packages/db/dist
+
+CMD ["node", "dist/index.js"]

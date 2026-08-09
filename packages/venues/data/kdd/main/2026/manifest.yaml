@@ -1,0 +1,100 @@
+id: "kdd/main/2026/v1"
+conferenceId: "kdd"
+track: "main"
+year: 2026
+version: 1
+status: "rubric_only"
+
+scoreScale:
+  min: 1
+  max: 6
+  step: 1
+  labels:
+    1: "Strong reject"
+    2: "Reject"
+    3: "Borderline reject"
+    4: "Borderline accept"
+    5: "Accept"
+    6: "Strong accept"
+
+reviewSections:
+  - id: "summary"
+    title: "Summary"
+    required: true
+    description: "Summarize the paper including the problem, method, and contributions."
+    maxLength: 3000
+
+  - id: "strengths"
+    title: "Strengths"
+    required: true
+    description: "List the strengths of the paper. Consider novelty, significance to data mining/KDD community, experimental quality, and practical applicability."
+    maxLength: 5000
+
+  - id: "weaknesses"
+    title: "Weaknesses"
+    required: true
+    description: "List the weaknesses including gaps in evaluation, scalability concerns, or limited novelty."
+    maxLength: 5000
+
+  - id: "questions"
+    title: "Questions"
+    required: true
+    description: "Questions for the authors that could influence your assessment."
+    maxLength: 3000
+
+  - id: "novelty"
+    title: "Novelty"
+    required: true
+    description: "Assess the novelty of the approach. Is this a significant advance over prior work?"
+    maxLength: 2000
+
+  - id: "experimental_quality"
+    title: "Experimental Quality"
+    required: true
+    description: "Assess the quality and thoroughness of the experimental evaluation. Are baselines appropriate? Are datasets representative?"
+    maxLength: 2000
+
+  - id: "practical_impact"
+    title: "Practical Impact"
+    required: true
+    description: "Assess the potential practical impact of this work in real-world applications."
+    maxLength: 2000
+
+  - id: "confidence"
+    title: "Confidence"
+    required: true
+    description: "Rate your confidence from 1 (low) to 5 (expert)."
+
+precheckRules:
+  - id: "page_limit"
+    type: "hard_stop"
+    condition: "Research track paper body exceeds 9 pages (excluding references)"
+    message: "KDD research track papers are limited to 9 pages plus unlimited references."
+
+  - id: "anonymization"
+    type: "hard_stop"
+    condition: "Paper is not properly anonymized for double-blind review"
+    message: "KDD uses double-blind review. The paper must not reveal author identities."
+
+  - id: "formatting"
+    type: "needs_confirmation"
+    condition: "Paper does not use the ACM two-column format"
+    message: "KDD papers must use the ACM conference proceedings format."
+
+  - id: "reproducibility"
+    type: "needs_confirmation"
+    condition: "Paper makes empirical claims without code or data availability statement"
+    message: "KDD strongly encourages sharing of code and data for reproducibility."
+
+  - id: "dual_submission"
+    type: "hard_stop"
+    condition: "Paper is under review or accepted elsewhere"
+    message: "KDD does not accept papers currently under review or already accepted elsewhere."
+
+calibration:
+  status: "rubric_only"
+
+source:
+  url: "https://kdd2026.kdd.org/call-for-research-track-papers/"
+  accessDate: "2026-01-15"
+  maintainerNote: "Based on KDD 2024/2025 review guidelines. KDD uses 1-6 scale for research track."

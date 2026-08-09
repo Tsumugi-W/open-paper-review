@@ -1,0 +1,104 @@
+id: "rss/main/2026/v1"
+conferenceId: "rss"
+track: "main"
+year: 2026
+version: 1
+status: "rubric_only"
+
+scoreScale:
+  min: 1
+  max: 10
+  step: 1
+  labels:
+    1: "Trivial or wrong"
+    2: "Strong reject"
+    3: "Clear reject"
+    4: "Reject"
+    5: "Borderline reject"
+    6: "Borderline accept"
+    7: "Accept"
+    8: "Clear accept"
+    9: "Strong accept"
+    10: "Best paper candidate"
+
+reviewSections:
+  - id: "summary"
+    title: "Summary"
+    required: true
+    description: "Summarize the paper's problem, approach, and main contributions to robotics science and systems."
+    maxLength: 3000
+
+  - id: "strengths"
+    title: "Strengths"
+    required: true
+    description: "Describe the strengths. Consider scientific rigor, novelty of approach, quality of system integration, and experimental evaluation on real robots."
+    maxLength: 5000
+
+  - id: "weaknesses"
+    title: "Weaknesses"
+    required: true
+    description: "Describe the weaknesses. Consider insufficient experimental validation, lack of system-level evaluation, or limited real-world deployment."
+    maxLength: 5000
+
+  - id: "questions"
+    title: "Questions for Authors"
+    required: true
+    description: "Questions about the approach, system design, experimental methodology, and real-world performance."
+    maxLength: 3000
+
+  - id: "system_contribution"
+    title: "Systems Contribution"
+    required: true
+    description: "Assess the systems-level contribution. Does the paper present a novel robotic system or meaningful system integration? Is the engineering contribution significant?"
+    maxLength: 2000
+
+  - id: "scientific_rigor"
+    title: "Scientific Rigor"
+    required: true
+    description: "Assess the scientific rigor. Are claims well-supported? Is the methodology sound? Are experiments well-designed with proper controls?"
+    maxLength: 2000
+
+  - id: "real_world_impact"
+    title: "Real-World Impact"
+    required: true
+    description: "Assess the potential real-world impact. Does this advance the state of the art in a meaningful way for deployed robotic systems?"
+    maxLength: 2000
+
+  - id: "confidence"
+    title: "Confidence"
+    required: true
+    description: "Rate your confidence from 1 (low) to 5 (expert in this robotics area)."
+
+precheckRules:
+  - id: "page_limit"
+    type: "hard_stop"
+    condition: "Paper body exceeds 8 pages (excluding references and appendix)"
+    message: "RSS papers are limited to 8 pages for the main body, with unlimited references and supplementary materials."
+
+  - id: "anonymization"
+    type: "hard_stop"
+    condition: "Paper is not properly anonymized for double-blind review"
+    message: "RSS uses double-blind review. Papers must not reveal author identities."
+
+  - id: "formatting"
+    type: "needs_confirmation"
+    condition: "Paper does not use the official RSS LaTeX template"
+    message: "Papers must use the RSS 2026 paper template."
+
+  - id: "reproducibility"
+    type: "needs_confirmation"
+    condition: "Paper does not provide sufficient detail for reproduction of results"
+    message: "RSS values reproducibility. Papers should provide enough detail (and ideally code/hardware specs) for replication."
+
+  - id: "dual_submission"
+    type: "hard_stop"
+    condition: "Paper is under review or published at another venue"
+    message: "RSS does not accept dual submissions or previously published work."
+
+calibration:
+  status: "rubric_only"
+
+source:
+  url: "https://roboticsconference.org/2026/call-for-papers/"
+  accessDate: "2026-01-15"
+  maintainerNote: "Based on RSS 2024/2025 review criteria. RSS values both scientific rigor and systems contributions. Uses 1-10 scale."
