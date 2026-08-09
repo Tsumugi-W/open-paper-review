@@ -17,11 +17,18 @@ Self-hosted, prompt-transparent, multi-agent academic paper review system.
 ## Quick Start
 
 ```bash
-# Clone and configure
-cp .env.example .env
-# Edit .env to add at least one model provider API key
+# Clone
+git clone git@github.com:Tsumugi-W/open-paper-review.git
+cd open-paper-review
 
-# Start all services
+# Configure
+cp .env.example .env
+# Edit .env to add at least one model provider API key:
+#   OPENAI_API_KEY=sk-...
+#   or ANTHROPIC_API_KEY=sk-ant-...
+#   or GOOGLE_AI_API_KEY=...
+
+# Start all services (requires Docker)
 docker compose up -d
 
 # Access at http://localhost:3000
